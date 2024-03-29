@@ -21,3 +21,5 @@ parameters or low-rank matrices associated with the layers we specify. We can se
 [2] https://huggingface.co/blog/gemma-peft
 
 [3] https://www.datacamp.com/tutorial/mastering-low-rank-adaptation-lora-enhancing-large-language-models-for-efficient-adaptation
+
+[4] Paul Mooney, Ashley Chow. (2024). Google – AI Assistants for Data Tasks with Gemma. Kaggle. https://kaggle.com/competitions/data-assistants-with-gemma
