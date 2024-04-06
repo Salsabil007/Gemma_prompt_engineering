@@ -6,11 +6,10 @@ I used the Gemma 2B parameter instruction trained version built using the Huggin
 
 ### Finetuning using LORA
 Before we begin, we need to request access to the gemma model from huggingface as it is a gated model. To do so, follow the link https://huggingface.co/google/gemma-7b and submit the consent form in Terms. Once you get access to the model, 
-go to the huggingface profile -> settings -> Access Tokens and generate a new token, preferably in READ form. In your google colab, click on the Sectets (key submol) tab in the left sidebar and add your token and use "HF_TOKEN" as name. 
+go to the huggingface profile -> settings -> Access Tokens and generate a new token, preferably in READ form. In your google colab, click on the Sectets (key sybmol) tab in the left sidebar and add your token and use "HF_TOKEN" as name. 
 In google colab, go to connect -> change runtime type -> Connect to T4 GPU.
 
-We will use parameter efficient finetuning technique (PEFT) LORA to finetune the gemma model. Generally, finetuning a LLM with 2 Billion parameters is complex and resource as well as time consuming. LoRA or low rank adaptation enables us to
-train only a fraction of the weights in the LLM while freezing the other weights. LoRA leverages the rank property of a matrix. Lower rank matrix are useful in data compression as it compress the size of a matrix while preserving sufficient 
+We will use parameter efficient finetuning technique (PEFT) using LORA to finetune the gemma model. Generally, finetuning a LLM with 2 Billion parameters is complex and resource as well as time-consuming. LoRA or low rank adaptation enables us to train only a fraction of the weights in the LLM while freezing the other weights. LoRA leverages the rank property of a matrix. Lower rank matrix are useful in data compression as it compress the size of a matrix while preserving sufficient 
 information. More details can be found in this [link](https://www.datacamp.com/tutorial/mastering-low-rank-adaptation-lora-enhancing-large-language-models-for-efficient-adaptation). In short, we can use LoRA to train only a small subset of 
 parameters or low-rank matrices associated with the layers we specify. We can select the layers that we want to decompose into low-rank matrix called LoRA adapter and train the adapters and add to the existing model during prediction.
 
